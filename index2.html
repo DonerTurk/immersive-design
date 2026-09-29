@@ -7,41 +7,39 @@
     <script src="app2.js"></script>
 </head>
 <body>
+
 <a-scene>
-    <!-- Blauwe lucht -->
+<a-assets   a-asset-item id="shell" src="shell.glb"></a-assets>
+   
     <a-sky color="#87CEEB"></a-sky>
 
     <!-- Geel strand -->
     <a-plane position="0 0 -5" rotation="-90 0 0"
              width="30" height="30" color="#E8C66A"></a-plane>
 
-    <!-- Zee -->
+
     <a-plane position="0 0.02 -13" rotation="-90 0 0"
              width="30" height="10" color="#249BD8"></a-plane>
 
-    <!-- Zon -->
+
     <a-sphere position="6 7 -15" radius="1.2" color="#FFD43B"></a-sphere>
 
-    <!-- Simpele schelp van A-Frame vormen -->
+    
     <a-entity id="schelp"
+              gltf-model = #shell
+              scale="20 20 20"
               position="0 0.55 -4"
               rotation="-15 0 0"
               interactief-object
               sound="src: url(https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav)">
-        <a-sphere scale="0.95 0.65 0.25" color="#FFB6A3"></a-sphere>
-        <a-sphere position="-0.45 0 0" scale="0.55 0.5 0.2" color="#FFC4B3"></a-sphere>
-        <a-sphere position="0.45 0 0" scale="0.55 0.5 0.2" color="#FFC4B3"></a-sphere>
-        <a-sphere position="0 0.3 0" scale="0.55 0.45 0.2" color="#FFD0C2"></a-sphere>
-        <a-torus position="0 -0.12 0.18" rotation="90 0 0"
-                 radius="0.35" radius-tubular="0.07"
-                 arc="180" color="#E88F86"></a-torus>
+
     </a-entity>
 
     <!-- Stenen op het strand -->
     <a-sphere position="-3 0.25 -5" scale="0.7 0.3 0.5" color="#777777"></a-sphere>
     <a-sphere position="3 0.2 -6" scale="0.5 0.25 0.4" color="#888888"></a-sphere>
 
-    <!-- Camera + cursor -->
+
     <a-camera position="0 1.6 1">
         <a-cursor color="black"></a-cursor>
     </a-camera>
