@@ -3,86 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title>Strand - A-Frame</title>
+
     <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
     <script src="app2.js"></script>
 </head>
+
 <body>
 
 <a-scene>
+
     <a-assets>
-        <!-- De echte 3D schelp -->
+        <!-- 3D schelp -->
         <a-asset-item id="schelpModel" src="shell.glb"></a-asset-item>
 
-        <!-- Geluid dat afspeelt als je op de schelp klikt -->
-        <audio id="schelpGeluid"
-               src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"
-               preload="auto"></audio>
+        <!-- Schelp geluid -->
+        <audio id="schelpGeluid" src="shell.mp3" preload="auto"></audio>
     </a-assets>
 
-<a-assets   a-asset-item id="shell" src="shell.glb"></a-assets>
-   
+
+    <!-- Lucht -->
     <a-sky color="#87CEEB"></a-sky>
 
-    <!-- Geel strand -->
-    <a-plane position="0 0 -5"
-             rotation="-90 0 0"
-             width="30"
-             height="30"
-             color="#E8C66A">
+
+    <!-- Strand -->
+    <a-plane
+        position="0 0 -5"
+        rotation="-90 0 0"
+        width="30"
+        height="30"
+        color="#E8C66A">
     </a-plane>
+
 
     <!-- Zee -->
-    <a-plane position="0 0.02 -13"
-             rotation="-90 0 0"
-             width="30"
-             height="10"
-             color="#249BD8">
+    <a-plane
+        position="0 0.02 -13"
+        rotation="-90 0 0"
+        width="30"
+        height="10"
+        color="#249BD8">
     </a-plane>
 
-    <a-plane position="0 0.02 -13" rotation="-90 0 0"
-             width="30" height="10" color="#249BD8"></a-plane>
 
     <!-- Zon -->
-    <a-sphere position="6 7 -15"
-              radius="1.2"
-              color="#FFD43B">
+    <a-sphere
+        position="6 7 -15"
+        radius="1.2"
+        color="#FFD43B">
     </a-sphere>
 
-    <a-sphere position="6 7 -15" radius="1.2" color="#FFD43B"></a-sphere>
 
-    <!-- Echte 3D schelp -->
-    
-    <a-entity id="schelp"
-              gltf-model="#schelpModel"
-              position="0 0.5 -4"
-              rotation="0 30 0"
-              scale="12 12 12"
-              sound="src: #schelpGeluid"
-              interactief-object>
-              gltf-model = #shell
-              scale="20 20 20"
-              position="0 0.55 -4"
-              rotation="-15 0 0"
-              interactief-object
-              sound="src: url(https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav)">
-
+    <!-- 3D schelp -->
+    <a-entity
+        id="schelp"
+        gltf-model="#schelpModel"
+        position="0 0.5 -4"
+        rotation="0 30 0"
+        scale="12 12 12"
+        sound="src: #schelpGeluid"
+        interactief-object>
     </a-entity>
 
+
     <!-- Stenen -->
-    <a-sphere position="-3 0.25 -5"
-              scale="0.7 0.3 0.5"
-              color="#777777">
+    <a-sphere
+        position="-3 0.25 -5"
+        scale="0.7 0.3 0.5"
+        color="#777777">
     </a-sphere>
 
-    <a-sphere position="3 0.2 -6"
-              scale="0.5 0.25 0.4"
-              color="#888888">
+    <a-sphere
+        position="3 0.2 -6"
+        scale="0.5 0.25 0.4"
+        color="#888888">
     </a-sphere>
 
 
-    <a-camera position="0 1.6 1">
+    <!-- Camera -->
+    <a-camera
+        near="0.1"
+        far="1000"
+        position="0 1.6 1">
+
         <a-cursor color="black"></a-cursor>
+
     </a-camera>
+
 </a-scene>
+
 </body>
 </html>
