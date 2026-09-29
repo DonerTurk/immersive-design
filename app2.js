@@ -6,16 +6,22 @@ AFRAME.registerComponent('interactief-object', {
 
         schelp.addEventListener('click', function () {
 
-            // Geluid afspelen
+            // Geluid opnieuw afspelen
+            schelp.components.sound.stopSound();
             schelp.components.sound.playSound();
 
-            // Schelp laten draaien
-            schelp.setAttribute('animation', {
-                property: 'rotation',
-                from: '0 30 0',
-                to: '0 390 0',
-                dur: 1000
-            });
+            // Oude animatie verwijderen
+            schelp.removeAttribute('animation');
+
+            // Animatie opnieuw starten
+            setTimeout(function () {
+                schelp.setAttribute('animation', {
+                    property: 'rotation',
+                    from: '0 30 0',
+                    to: '0 390 0',
+                    dur: 1000
+                });
+            }, 10);
 
         });
 
